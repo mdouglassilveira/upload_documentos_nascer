@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload de Comprovante</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Envio de Comprovante</h2>
+    <form id="upload-form">
+      <label for="email">E-mail ou CNPJ:</label>
+      <input type="text" id="email" required />
+
+      <label for="file">Comprovante (PDF):</label>
+      <input type="file" id="file" accept="application/pdf" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="status"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
