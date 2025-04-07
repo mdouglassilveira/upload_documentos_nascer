@@ -32,3 +32,4 @@ document.getElementById("upload-form").addEventListener("submit", async function
     status.innerText = "Comprovante enviado com sucesso!";
   }
 });
+
