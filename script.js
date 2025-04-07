@@ -1,6 +1,10 @@
+const { createClient } = supabase;
+
 const SUPABASE_URL = "https://cezrnjvcielbalvohyfo.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlenJuanZjaWVsYmFsdm9oeWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkyMTA1OTAsImV4cCI6MjA0NDc4NjU5MH0._Ny6cJaZHlPIdxLBvJtJGERVKV9WyvtbnHKR99wz9zE";
 const BUCKET_NAME = "documentos";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.getElementById("upload-form").addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -14,7 +18,6 @@ document.getElementById("upload-form").addEventListener("submit", async function
     return;
   }
 
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   const filePath = `${email}/comprovante.pdf`;
 
   const { error } = await supabase.storage.from(BUCKET_NAME).upload(filePath, file, {
@@ -24,6 +27,7 @@ document.getElementById("upload-form").addEventListener("submit", async function
 
   if (error) {
     status.innerText = "Erro ao enviar. Tente novamente.";
+    console.error(error);
   } else {
     status.innerText = "Comprovante enviado com sucesso!";
   }
