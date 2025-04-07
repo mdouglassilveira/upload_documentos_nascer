@@ -1,6 +1,6 @@
-const SUPABASE_URL = "https://<seu-url>.supabase.co";
-const SUPABASE_KEY = "<sua-anon-key>";
-const BUCKET_NAME = "comprovantes";
+const SUPABASE_URL = "https://cezrnjvcielbalvohyfo.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlenJuanZjaWVsYmFsdm9oeWZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkyMTA1OTAsImV4cCI6MjA0NDc4NjU5MH0._Ny6cJaZHlPIdxLBvJtJGERVKV9WyvtbnHKR99wz9zE";
+const BUCKET_NAME = "documentos";
 
 document.getElementById("upload-form").addEventListener("submit", async function (e) {
   e.preventDefault();
